@@ -1,0 +1,162 @@
+@font-face {
+  font-family: HankenGrotesk;
+  src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+/* I KNOW I OVERCOMPLICATED MYSELF, I WANTED TO QUICLY UNDERSTAND CSS NESTING AND GONE TOO FAR */
+
+:root {
+  /* PRIMARY */
+  --LightRred: hsl(0, 100%, 67%);
+  --OrangeyYellow: hsl(39, 100%, 56%);
+  --GreenTeal: hsl(166, 100%, 37%);
+  --CobaltBlue: hsl(234, 85%, 45%);
+  /* NEUTRAL */
+  --White: hsl(0, 0%, 100%);
+  --PaleBlue: hsl(221, 100%, 96%);
+  --LightLavander: hsl(241, 100%, 89%);
+  --DarkGreyBlue: hsl(224, 30%, 27%);
+  /* LINEAR GRADIENTS */
+  --SlateBlue: hsl(252, 100%, 67%);
+  --RoyalBlue: hsl(241, 81%, 54%);
+  --VioletBlue: hsl(256, 72%, 46%);
+  --PersianBlue: hsla(241, 72%, 46%, 0);
+}
+* {
+  font-family: HankenGrotesk;
+  margin: 0;
+  padding: 0;
+}
+main {
+  background-color: var(--PaleBlue);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cards {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-basis: 20rem;
+  border-radius: 24px;
+  &.results {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    /* color: white; */
+    & h2 {
+      color: white;
+      font-weight: 500;
+    }
+  }
+  &.summary {
+    background-color: hsl(0, 0%, 100%);
+    & h1 {
+      color: black;
+      margin-left: 1em;
+      align-self: flex-start;
+    }
+    & > :nth-child(2) {
+      color: var(--LightRred);
+      background-color: hsla(0, 100%, 67%, 0.1);
+    }
+    & > :nth-child(3) {
+      color: var(--OrangeyYellow);
+      background-color: hsla(39, 100%, 56%, 0.1);
+    }
+    & > :nth-child(4) {
+      color: var(--GreenTeal);
+      background-color: hsla(166, 100%, 37%, 0.1);
+    }
+    & > :nth-child(5) {
+      color: var(--CobaltBlue);
+      background-color: hsla(234, 85%, 45%, 0.1);
+    }
+    & div {
+      color: black;
+    }
+    & span {
+      font-weight: 800;
+    }
+  }
+}
+
+h1 {  color: hsla(0, 0%, 100%, 0.75);
+
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.circle {
+  min-height: 10rem;
+  min-width: 10rem;
+  background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & span {
+    color: white;
+    font-size: 4rem;
+    font-weight: 800;
+  }
+}
+#transparency {
+  color: hsla(0, 0%, 100%, 0.504);
+  font-size: initial;
+}
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 18px;
+  margin: 0 1rem;
+}
+.rectangles {
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 75%;
+  border-radius: 10px;
+}
+.rectangles div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+#Reaction{
+  color: var(--LightRred);
+}
+#Memory{
+  color: var(--OrangeyYellow);
+}
+#Verbal{
+  color: var(--GreenTeal);
+}
+#Visual{
+  color:var(--CobaltBlue)
+}
+button {
+  all: unset;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  padding: 0.5em 4em;
+  border-radius: 24px;
+  font-size: 1.5rem;
+}
+button:hover{
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+@media screen and (orientation: portrait) {
+  .cards {
+    border-radius: 0 0 24px 24px;
+    flex-basis: 100%;
+  }
+}
