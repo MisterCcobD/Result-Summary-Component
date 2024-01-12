@@ -56,11 +56,6 @@ main {
   }
   &.summary {
     background-color: hsl(0, 0%, 100%);
-    & h1 {
-      color: black;
-      margin-left: 1em;
-      align-self: flex-start;
-    }
     & > :nth-child(2) {
       color: var(--LightRred);
       background-color: hsla(0, 100%, 67%, 0.1);
@@ -84,6 +79,11 @@ main {
       font-weight: 800;
     }
   }
+}
+.summary h1 {
+  color: black;
+  margin-left: 1em;
+  align-self: flex-start;
 }
 
 h1 {  color: hsla(0, 0%, 100%, 0.75);
@@ -159,4 +159,9 @@ button:hover{
     border-radius: 0 0 24px 24px;
     flex-basis: 100%;
   }
+}
+@media (min-width:375px) and (orientation:portrait) {
+  .summary h1{
+    margin-left: 2em;
+  }  
 }
